@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Utilities Suite</string>
+
+	<!-- File browser strings -->
+    <string name="file_browser_app_name">File Browser</string>
+	
+	<!-- Video player strings -->
+    <string name="video_player_app_name">Video Player</string>
+	
+	<!-- Expense tracker strings -->
+    <string name="expense_tracker_app_name">Expense Tracker</string>
+	<string-array name="nagivation_tab_labels">
+		<item>Add Expense Entry</item>
+		<item>Add Expense Category</item>
+		<item>View Expenses</item>
+		<item>Trendz</item>
+		<item>Advice</item>
+	</string-array>
+	<string-array name="content_classes">
+		<item>ScreenAddExpense</item>
+		<item>ScreenAddCategory</item>
+		<item>ScreenViewExpenses</item>
+		<item>ScreenTrendz</item>
+		<item>ScreenAdvice</item>
+	</string-array>
+	
+	<string name="category_name_label">Category Name</string>
+	<string name="category_name_hint">Enter category name</string>
+	<string name="category_desc_label">Category Description</string>
+	<string name="category_desc_hint">Enter category description</string>
+	<string name="add_category_button_text">Add Category</string>
+	
+	<string name="expense_cat_label">Category</string>
+	<string name="expense_cost_label">Cost</string>
+	<string name="expense_date_label">Date</string>
+	<string name="expense_desc_label">Comments</string>
+	
+	
+	
+	
+	<!-- Password manager strings -->
+    <string name="password_manager_app_name">Password Manager</string>
+	
+	<!-- Web server strings -->
+    <string name="web_server_app_name">Web Server</string>
+	
+	<!-- Image processing strings -->
+    <string name="image_processing_app_name">Image Processing</string>
+	
+	<!-- RSS reader strings -->
+    <string name="rss_reader_app_name">RSS Reader</string>
+	
+</resources>
