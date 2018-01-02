@@ -1,13 +1,14 @@
 package com.partho.apps;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
-import android.view.View;
-import android.os.Bundle;
-import android.os.Environment;
-import android.content.Intent;
+import android.widget.Button;
 
 import java.io.File;
 import java.sql.Date;
@@ -15,6 +16,7 @@ import java.text.DateFormat;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 import com.partho.apps.filebrowser.FileArrayAdapter;
 import com.partho.apps.filebrowser.FileListItem;
@@ -34,17 +36,41 @@ import com.partho.apps.filebrowser.FileListItem;
  * 			http://stackoverflow.com/questions/39725237/get-all-storage-paths-in-android 
  * 			and 
  * 			http://stackoverflow.com/questions/39850004/android-get-all-external-storage-path-for-all-devices
- 
- 
  */
 public class FileBrowserActivity extends Activity
 {
 
 	public enum BrowserMode
 	{
-		BROWSE, 
-		SELECT_DIRECTORY, 
-		SELECT_FILE
+		BROWSE(0), 
+		SELECT_DIRECTORY(1), 
+		SELECT_FILE(2);
+		
+		private int bmValue;
+		private static HashMap bmMap = new HashMap();
+		
+		static
+		{
+			for(BrowserMode bm: BrowserMode.values())
+			{
+				bmMap.put(bm.bmValue, bm);
+			}
+		}
+		
+		BrowserMode(int val)
+		{
+			bmValue = val;
+		}
+		
+		public int getValue()
+		{
+			return bmValue;
+		}
+		
+		public static BrowserMode fromInt(int intVal)
+		{
+			return (BrowserMode)bmMap.get(intVal);
+		}
 	};
 	
 	public static final String BROWSER_MODE_EXTRA_KEY = "BrowserMode";
@@ -71,12 +97,38 @@ public class FileBrowserActivity extends Activity
 	{
 		Intent intent = getIntent();
 		int value = intent.getIntExtra(BROWSER_MODE_EXTRA_KEY, -1);		// default to BrowserMode.BROWSE, -1 is for testing
+		if(value < BrowserMode.BROWSE.getValue() || value > BrowserMode.SELECT_FILE.getValue())
+			value = BrowserMode.BROWSE.getValue();
+		mBrowserMode = BrowserMode.fromInt(value);
 		// Need to refine this. Check NOTES
 		if(isExternalStorageAvailable())
 			currentDirectory = Environment.getExternalStorageDirectory();
 		else
 			currentDirectory = new File("/");
+		SetupBrowseMode();
 		populateFileList(currentDirectory);
+	}
+	
+	private void SetupBrowseMode()
+	{
+		Button btnSelFolder = (Button)findViewById(R.id.btn_select_folder);
+		if(mBrowserMode != BrowserMode.SELECT_DIRECTORY)
+		{
+			btnSelFolder.setVisibility(View.GONE);
+		}
+		else
+		{
+			btnSelFolder.setVisibility(View.VISIBLE);
+			btnSelFolder.setOnClickListener(new View.OnClickListener()
+				{
+					@Override
+					public void onClick(View v)
+					{
+						onFolderSelected();
+					}
+				}
+			);
+		}
 	}
 	
 	private boolean isExternalStorageAvailable()
@@ -171,14 +223,28 @@ public class FileBrowserActivity extends Activity
 		}
 	}
 	
+	private void onFolderSelected()
+	{
+		if(mBrowserMode != BrowserMode.SELECT_DIRECTORY)
+			return;
+		Toast.makeText(this, "Folder Clicked: " + currentDirectory, Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent();
+		intent.putExtra(BROWSER_RETURN_DIR_PATH, currentDirectory.toString());
+		setResult(RESULT_OK, intent);
+		System.gc();
+		finish();
+	}
+	
 	private void onFileClick(FileListItem item)
 	{
+		if(mBrowserMode != BrowserMode.SELECT_FILE)
+			return;
 		Toast.makeText(this, "Folder Clicked: " + currentDirectory, Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent();
 		intent.putExtra(BROWSER_RETURN_DIR_PATH, currentDirectory.toString());
 		intent.putExtra(BROWSER_RETURN_FILE_NAME, item.getName());
 		setResult(RESULT_OK, intent);
+		System.gc();
 		finish();
 	}
-
 }

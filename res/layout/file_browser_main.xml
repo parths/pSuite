@@ -4,6 +4,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+	<Button
+		android:id="@+id/btn_select_folder" 
+		android:text="@string/file_browser_select_folder_button_text" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" >
+	</Button>
 	<ListView 
 		android:id="@+id/file_list" 
 		android:layout_width="match_parent" 

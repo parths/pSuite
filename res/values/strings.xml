@@ -4,6 +4,7 @@
 
 	<!-- File browser strings -->
     <string name="file_browser_app_name">File Browser</string>
+    <string name="file_browser_select_folder_button_text">Select Folder</string>
 	
 	<!-- Video player strings -->
     <string name="video_player_app_name">Video Player</string>
