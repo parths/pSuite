@@ -46,7 +46,6 @@ public class ScreenAddCategory extends Fragment
 	{
 		ListView lstView = (ListView)v.findViewById(R.id.expense_tracker_categories_list);
 		List<SQLiteDBTableCategories.CategoryInfo> cats = ((SQLiteDBTableCategories)(dbHelper.getTableHandler("tbl_categories"))).getCategories();
-		System.out.println("Cats: " + ((cats != null) ? cats.size() : "NULL"));
 		CategoryArrayAdapter catArr = new CategoryArrayAdapter(getActivity(), R.layout.expense_tracker_category_list_item, cats);
 		lstView.setAdapter(catArr);
 	}

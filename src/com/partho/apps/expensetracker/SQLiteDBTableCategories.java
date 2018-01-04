@@ -17,12 +17,14 @@ public class SQLiteDBTableCategories implements ISQLiteTable
 		private int id;
 		private String name;
 		private String desc;
+		private String date;
 		
-		public CategoryInfo(int id, String name, String desc)
+		public CategoryInfo(int id, String name, String desc, String creationDate)
 		{
 			this.id = id;
 			this.name = name;
 			this.desc = desc;
+			this.date = creationDate;
 		}
 		
 		public int getId()
@@ -39,6 +41,11 @@ public class SQLiteDBTableCategories implements ISQLiteTable
 		{
 			return desc;
 		}
+
+		public String getDate()
+		{
+			return date;
+		}
 	}
 	
 	private String tblName = "tbl_categories";
@@ -54,7 +61,7 @@ public class SQLiteDBTableCategories implements ISQLiteTable
 		return 
 			"CREATE TABLE " 
 			+ tblName + " " 
-			+ "(cat_id integer primary key, cat_name text, cat_desc text)";
+			+ "(cat_id INTEGER PRIMARY KEY, cat_name TEXT, cat_desc TEXT, creation_date DATETIME DEFAULT CURRENT_TIMESTAMP)";
 			
 	}
 	
@@ -85,7 +92,8 @@ public class SQLiteDBTableCategories implements ISQLiteTable
 			{
 				cInfo.add( new CategoryInfo(res.getInt(res.getColumnIndex("cat_id")), 
 					res.getString(res.getColumnIndex("cat_name")), 
-					res.getString(res.getColumnIndex("cat_desc"))) );
+					res.getString(res.getColumnIndex("cat_desc")), 
+					res.getString(res.getColumnIndex("creation_date"))) );
 				res.moveToNext();
 			}
 			res.close();

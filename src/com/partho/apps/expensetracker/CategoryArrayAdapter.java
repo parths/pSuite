@@ -15,6 +15,7 @@ import android.graphics.drawable.Drawable;
 
 import java.io.File;
 import java.util.List;
+import java.util.ArrayList;
 
 import com.partho.apps.R;
 
@@ -37,6 +38,15 @@ public class CategoryArrayAdapter extends ArrayAdapter<SQLiteDBTableCategories.C
 	public SQLiteDBTableCategories.CategoryInfo getItem(int idx)
 	{
 		return listItems.get(idx);
+	}
+	
+	@Override
+	public int getCount()
+	{
+		if(listItems != null)
+			return super.getCount();
+		else
+			return 0;
 	}
 	
 	@Override

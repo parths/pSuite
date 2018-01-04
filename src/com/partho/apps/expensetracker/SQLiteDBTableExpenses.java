@@ -69,7 +69,7 @@ public class SQLiteDBTableExpenses implements ISQLiteTable
 		return 
 			"CREATE TABLE " 
 			+ tblName + " " 
-			+ "(exp_id integer primary key, exp_cat INTEGER, exp_date DATETIME DEFAULT CURRENT_TIMESTAMP, exp_cost FLOAT, exp_desc TEXT)";
+			+ "(exp_id INTEGER PRIMARY KEY, exp_cat INTEGER, exp_date DATETIME DEFAULT CURRENT_TIMESTAMP, exp_cost FLOAT, exp_desc TEXT)";
 			
 	}
 	
