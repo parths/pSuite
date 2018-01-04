@@ -16,9 +16,14 @@ import java.util.ArrayList;
 import com.partho.utils.data.SQLiteDBHelper;
 import com.partho.utils.data.ISQLiteTable;
 import com.partho.apps.expensetracker.ScreenAddCategory;
+import com.partho.apps.expensetracker.ScreenAddExpense;
+import com.partho.apps.expensetracker.ScreenAddItemCategory;
+import com.partho.apps.expensetracker.ScreenAddItem;
+import com.partho.apps.R;
 
 import com.partho.apps.expensetracker.SQLiteDBTableCategories;
 import com.partho.apps.expensetracker.SQLiteDBTableExpenses;
+import com.partho.apps.expensetracker.SQLiteDBTableItemCategories;
 
 public class ExpenseTrackerActivity extends FragmentActivity
 {
@@ -57,7 +62,7 @@ public class ExpenseTrackerActivity extends FragmentActivity
 	
 	private void InitializeDB()
 	{
-		dbHelper = new SQLiteDBHelper(this, DB_NAME, new ISQLiteTable[] { new SQLiteDBTableExpenses(), new SQLiteDBTableCategories() });
+		dbHelper = new SQLiteDBHelper(this, DB_NAME, new ISQLiteTable[] { new SQLiteDBTableExpenses(), new SQLiteDBTableCategories(), new SQLiteDBTableItemCategories() });
 	}
 	
 	private class DrawerItemClickListener implements AdapterView.OnItemClickListener 
@@ -75,11 +80,16 @@ public class ExpenseTrackerActivity extends FragmentActivity
 			switch((int)id)
 			{
 			case 0:
+				frag = new ScreenAddExpense(dbHelper, R.layout.expense_tracker_add_expense);
 				break;
 			case 1:
-				frag = new ScreenAddCategory(dbHelper);
+				frag = new ScreenAddCategory(dbHelper, R.layout.expense_tracker_add_category);
 				break;
 			case 2:
+				frag = new ScreenAddItemCategory(dbHelper, R.layout.expense_tracker_add_category);
+				break;
+			case 3:
+				frag = new ScreenAddItem(dbHelper, R.layout.expense_tracker_add_item);
 				break;
 			default:
 				break;

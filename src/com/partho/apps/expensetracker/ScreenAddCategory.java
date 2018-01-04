@@ -16,25 +16,14 @@ import com.partho.utils.data.ISQLiteTable;
 
 import java.util.List;
 
-public class ScreenAddCategory extends Fragment
+public class ScreenAddCategory extends ScreenBase
 {
-	private SQLiteDBHelper dbHelper;
-	
-	
-	public ScreenAddCategory(SQLiteDBHelper dbHelper)
+	public ScreenAddCategory(SQLiteDBHelper dbHelper, int layout)
 	{
-		this.dbHelper = dbHelper;
+		super(dbHelper, layout);
 	}
 	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance)
-	{
-		View view = inflater.inflate(R.layout.expense_tracker_add_category, container, false);
-		System.out.println("view: " + ((view == null) ? "NULL" : "Exists"));
-		SetupUI(view);
-		return view;
-	}
-	
 	public void SetupUI(View v)
 	{
 		Button btn = (Button)v.findViewById(R.id.expense_tracker_add_category_btn);

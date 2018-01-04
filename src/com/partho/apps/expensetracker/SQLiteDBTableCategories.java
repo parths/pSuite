@@ -48,27 +48,26 @@ public class SQLiteDBTableCategories implements ISQLiteTable
 		}
 	}
 	
-	private String tblName = "tbl_categories";
 	private SQLiteDBHelper dbHelper;
 	
 	public String getName()
 	{
-		return tblName;
+		return "tbl_categories";
 	}
 	
 	public String getCreateQuery()
 	{
 		return 
 			"CREATE TABLE " 
-			+ tblName + " " 
-			+ "(cat_id INTEGER PRIMARY KEY, cat_name TEXT, cat_desc TEXT, creation_date DATETIME DEFAULT CURRENT_TIMESTAMP)";
+			+ getName() + " " 
+			+ "(cat_id INTEGER PRIMARY KEY, cat_name TEXT, cat_desc TEXT, creation_date DATETIME DEFAULT CURRENT_TIMESTAMP);\n";
 			
 	}
 	
 	public String getDeleteQuery()
 	{
 		return 
-			"DROP TABLE IF EXISTS categories ";
+			"DROP TABLE IF EXISTS " + getName();
 	}
 	
 	public void setDBHelper(SQLiteDBHelper helper)
@@ -79,7 +78,7 @@ public class SQLiteDBTableCategories implements ISQLiteTable
 	public List<CategoryInfo> getCategories()
 	{
 		SQLiteDatabase db = dbHelper.getReadableDatabase();
-		Cursor res = db.rawQuery("SELECT * FROM " + tblName, null);
+		Cursor res = db.rawQuery("SELECT * FROM " + getName(), null);
 		List<CategoryInfo> cInfo = null;
 		if(res.getCount() > 0)
 		{
@@ -107,6 +106,6 @@ public class SQLiteDBTableCategories implements ISQLiteTable
 		ContentValues values = new ContentValues();
 		values.put("cat_name", name);
 		values.put("cat_desc", desc);
-		db.insert(tblName, null, values);
+		db.insert(getName(), null, values);
 	}
 }

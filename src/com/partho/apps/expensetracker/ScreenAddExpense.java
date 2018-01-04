@@ -7,14 +7,21 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.partho.apps.R;
+import com.partho.utils.data.SQLiteDBHelper;
+import com.partho.utils.data.ISQLiteTable;
 
-public class ScreenAddExpense extends Fragment
+public class ScreenAddExpense extends ScreenBase
 {
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance)
+	private SQLiteDBHelper dbHelper;
+	
+	
+	public ScreenAddExpense(SQLiteDBHelper dbHelper, int layout)
 	{
-		View view = inflater.inflate(R.layout.expense_tracker_add_expense, container, false);
-		System.out.println("view: " + ((view == null) ? "NULL" : "Exists"));
-		return view;
+		super(dbHelper, layout);
+	}
+	
+	@Override
+	public void SetupUI(View v)
+	{
 	}
 }

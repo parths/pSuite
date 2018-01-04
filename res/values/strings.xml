@@ -12,8 +12,10 @@
 	<!-- Expense tracker strings -->
     <string name="expense_tracker_app_name">Expense Tracker</string>
 	<string-array name="nagivation_tab_labels">
-		<item>Add Expense Entry</item>
-		<item>Add Expense Category</item>
+		<item>New Expense</item>
+		<item>Add Category</item>
+		<item>Add Item Category</item>
+		<item>Add Item</item>
 		<item>View Expenses</item>
 		<item>Trendz</item>
 		<item>Advice</item>
