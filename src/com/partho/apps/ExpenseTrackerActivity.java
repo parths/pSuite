@@ -18,6 +18,7 @@ import com.partho.utils.data.ISQLiteTable;
 import com.partho.apps.expensetracker.ScreenAddCategory;
 
 import com.partho.apps.expensetracker.SQLiteDBTableCategories;
+import com.partho.apps.expensetracker.SQLiteDBTableExpenses;
 
 public class ExpenseTrackerActivity extends FragmentActivity
 {
