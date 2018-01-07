@@ -38,6 +38,9 @@
 	<string name="expense_cost_label">Cost</string>
 	<string name="expense_date_label">Date</string>
 	<string name="expense_desc_label">Comments</string>
+
+	<string name="item_name_label">Item Name</string>
+	<string name="add_item_button_text">Add Item</string>
 	
 	
 	

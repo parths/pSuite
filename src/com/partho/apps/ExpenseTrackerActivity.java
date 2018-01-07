@@ -24,6 +24,7 @@ import com.partho.apps.R;
 import com.partho.apps.expensetracker.SQLiteDBTableCategories;
 import com.partho.apps.expensetracker.SQLiteDBTableExpenses;
 import com.partho.apps.expensetracker.SQLiteDBTableItemCategories;
+import com.partho.apps.expensetracker.SQLiteDBTableItems;
 
 public class ExpenseTrackerActivity extends FragmentActivity
 {
@@ -62,7 +63,15 @@ public class ExpenseTrackerActivity extends FragmentActivity
 	
 	private void InitializeDB()
 	{
-		dbHelper = new SQLiteDBHelper(this, DB_NAME, new ISQLiteTable[] { new SQLiteDBTableExpenses(), new SQLiteDBTableCategories(), new SQLiteDBTableItemCategories() });
+		dbHelper = new SQLiteDBHelper(this, DB_NAME, 
+										new ISQLiteTable[] 
+										{
+											new SQLiteDBTableExpenses(), 
+											new SQLiteDBTableCategories(), 
+											new SQLiteDBTableItemCategories(), 
+											new SQLiteDBTableItems() 
+										}
+									);
 	}
 	
 	private class DrawerItemClickListener implements AdapterView.OnItemClickListener 
