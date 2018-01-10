@@ -46,7 +46,7 @@
 	
 	
 	<!-- Password manager strings -->
-    <string name="password_manager_app_name">Password Manager</string>
+    <string name="secrets_manager_app_name">Secrets Manager</string>
 	
 	<!-- Web server strings -->
     <string name="web_server_app_name">Web Server</string>

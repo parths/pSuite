@@ -21,8 +21,8 @@
 		<activity android:name="ExpenseTrackerActivity"
 			android:label="@string/expense_tracker_app_name">
 		</activity>
-		<activity android:name="PasswordManagerActivity"
-			android:label="@string/password_manager_app_name">
+		<activity android:name="SecretsManagerActivity"
+			android:label="@string/secrets_manager_app_name">
 		</activity>
 		<activity android:name="WebServerActivity"
 			android:label="@string/web_server_app_name">
