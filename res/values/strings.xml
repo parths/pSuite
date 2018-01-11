@@ -45,8 +45,23 @@
 	
 	
 	
-	<!-- Password manager strings -->
+	<!-- Secrets manager strings -->
     <string name="secrets_manager_app_name">Secrets Manager</string>
+    <string name="secrets_login_label_text">Login Id</string>
+    <string name="secrets_login_pwd_text">Password</string>
+    <string name="secrets_login_button_text">Login</string>
+    <string name="secrets_newuser_button_text">New User</string>
+    <string name="secrets_manager_cancel_button_text">Cancel</string>
+	<string-array name="secrets_nagivation_tab_labels">
+		<item>Add Password</item>
+		<item>List Passwords</item>
+		<item>Add Media</item>
+		<item>List Media</item>
+		<item>Add Note</item>
+		<item>List Notes</item>
+		<item>Change User</item>
+		<item>Exit</item>
+	</string-array>
 	
 	<!-- Web server strings -->
     <string name="web_server_app_name">Web Server</string>
