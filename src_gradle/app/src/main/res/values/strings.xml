@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Utilities Suite</string>
+
+    <!-- File browser strings -->
+    <string name="file_browser_app_name">File Browser</string>
+    <string name="file_browser_select_folder_button_text">Select Folder</string>
+
+    <!-- Video player strings -->
+    <string name="video_player_app_name">Video Player</string>
+
+    <!-- Expense tracker strings -->
+    <string name="expense_tracker_app_name">Expense Tracker</string>
+    <string-array name="nagivation_tab_labels">
+        <item>New Expense</item>
+        <item>Add Category</item>
+        <item>Add Item Category</item>
+        <item>Add Item</item>
+        <item>View Expenses</item>
+        <item>Trendz</item>
+        <item>Advice</item>
+    </string-array>
+    <string-array name="content_classes">
+        <item>ScreenAddExpense</item>
+        <item>ScreenAddCategory</item>
+        <item>ScreenViewExpenses</item>
+        <item>ScreenTrendz</item>
+        <item>ScreenAdvice</item>
+    </string-array>
+
+    <string name="category_name_label">Category Name</string>
+    <string name="category_name_hint">Enter category name</string>
+    <string name="category_desc_label">Category Description</string>
+    <string name="category_desc_hint">Enter category description</string>
+    <string name="add_category_button_text">Add Category</string>
+
+    <string name="expense_cat_label">Category</string>
+    <string name="expense_cost_label">Cost</string>
+    <string name="expense_date_label">Date</string>
+    <string name="expense_desc_label">Comments</string>
+
+    <string name="item_name_label">Item Name</string>
+    <string name="add_item_button_text">Add Item</string>
+
+
+    <!-- Secrets manager strings -->
+    <string name="secrets_manager_app_name">Secrets Manager</string>
+    <string name="secrets_login_label_text">Login Id</string>
+    <string name="secrets_login_pwd_text">Password</string>
+    <string name="secrets_login_button_text">Login</string>
+    <string name="secrets_newuser_button_text">New User</string>
+    <string name="secrets_manager_cancel_button_text">Cancel</string>
+    <string-array name="secrets_nagivation_tab_labels">
+        <item>Add Password</item>
+        <item>List Passwords</item>
+        <item>Add Media</item>
+        <item>List Media</item>
+        <item>Add Note</item>
+        <item>List Notes</item>
+        <item>Change User</item>
+        <item>Exit</item>
+    </string-array>
+
+    <!-- Web server strings -->
+    <string name="web_server_app_name">Web Server</string>
+
+    <!-- Image processing strings -->
+    <string name="image_processing_app_name">Image Processing</string>
+
+    <!-- RSS reader strings -->
+    <string name="rss_reader_app_name">RSS Reader</string>
+
+
+</resources>
