@@ -9,5 +9,31 @@
 		android:layout_width="match_parent" 
 		android:layout_height="wrap_content" >
 	</ListView>
+	<TextView
+		android:id="@+id/temperature_text_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Sample Sensor Data"/>
+
+	<!--ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="256dp">
+		<TextView
+			android:id="@+id/log_text_view"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="SensorData"/>
+	</ScrollView-->
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="256dp">
+
+		<LinearLayout
+			android:id="@+id/sensor_data_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="16dp" />
+	</ScrollView>
 </LinearLayout>
 

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.hardware.sensor.proximity" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -33,28 +35,29 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<!--            <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />-->
         </activity>
         <activity
             android:name="com.partho.apps.FileBrowserActivity"
-            android:label="@string/file_browser_app_name"></activity>
+            android:label="@string/file_browser_app_name" />
         <activity
             android:name="com.partho.apps.VideoPlayerActivity"
-            android:label="@string/video_player_app_name"></activity>
+            android:label="@string/video_player_app_name" />
         <activity
             android:name="com.partho.apps.ExpenseTrackerActivity"
-            android:label="@string/expense_tracker_app_name"></activity>
+            android:label="@string/expense_tracker_app_name" />
         <activity
             android:name="com.partho.apps.SecretsManagerActivity"
-            android:label="@string/secrets_manager_app_name"></activity>
+            android:label="@string/secrets_manager_app_name" />
         <activity
             android:name="com.partho.apps.WebServerActivity"
-            android:label="@string/web_server_app_name"></activity>
+            android:label="@string/web_server_app_name" />
         <activity
             android:name="com.partho.apps.ImageProcessingActivity"
-            android:label="@string/image_processing_app_name"></activity>
+            android:label="@string/image_processing_app_name" />
         <activity
             android:name="com.partho.apps.RSSReaderActivity"
-            android:label="@string/rss_reader_app_name"></activity>
+            android:label="@string/rss_reader_app_name" />
     </application>
 
 </manifest>
